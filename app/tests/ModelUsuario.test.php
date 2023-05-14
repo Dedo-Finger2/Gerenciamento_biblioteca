@@ -6,5 +6,6 @@ use App\Model\ModelUsuario;
     $testeArray = array();
 
     //var_dump($teste = (new ModelUsuario())->create($testeArray));
-    var_dump($teste = (new ModelUsuario())->listAll());
+    //var_dump($teste = (new ModelUsuario())->listAll());
+    echo $teste = (new ModelUsuario())->delete(2);
 

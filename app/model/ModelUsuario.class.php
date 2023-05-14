@@ -79,7 +79,7 @@ class ModelUsuario
                 return $id;
             } catch (\Exception $e) {
                 // Registering the error in log files [SOON]
-                $errorMsg = "[ERROR]: Failed on editing a new user: " . $e->getMessage();
+                $errorMsg = "[ERROR]: Failed on editing user: " . $e->getMessage();
 
                 echo "<div class='erroMsg'>$errorMsg</div>"; 
             }
@@ -92,7 +92,25 @@ class ModelUsuario
      */
     public function delete(int $id)
     {
+        if (get_class($this->connection) == "mysqli") {
+            
+            $deletedUser = $this->connection->prepare("DELETE FROM usuario WHERE idUsuario = ?");
+            $deletedUser->bind_param("i", $id);
 
+            try {
+                $deletedUser->execute();
+
+                // Registering in log files [SOON]
+
+                return $id;
+            } catch (\Exception $e) {
+                // Registering the rror in log files [SOON]
+
+                $errorMsg = "[ERROR]: Failed on deleting a user: " . $e->getMessage();
+
+                echo "<div class='erroMsg'>$errorMsg</div>"; 
+            }
+        }
     }
 
     /**
