@@ -5,4 +5,6 @@ use App\Model\ModelUsuario;
 
     $testeArray = array();
 
-    var_dump($teste = (new ModelUsuario())->create($testeArray));
+    //var_dump($teste = (new ModelUsuario())->create($testeArray));
+    var_dump($teste = (new ModelUsuario())->listAll());
+

@@ -4,7 +4,7 @@
     {
         public function createForm();
 
-        public function editForm();
+        public function editForm($users);
 
         public function deleteForm();
 
