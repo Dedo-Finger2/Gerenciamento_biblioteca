@@ -2,6 +2,8 @@
 
     namespace App\View;
 
+    require_once("IView.interface.php");
+
     class ViewUsuario implements \IView
     {
 
@@ -11,7 +13,15 @@
          */
         public function createForm()
         {
-
+            $form = 
+            '
+            <form action="" method="post">
+                <label for="userName">Nome: </label>
+                <input type="text" id="userName" name="userName">
+                <button type="submit">Criar usuário</button>
+            </form>
+            ';
+            printf("%s", $form);
         }
 
         /**
