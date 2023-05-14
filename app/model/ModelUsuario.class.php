@@ -4,10 +4,9 @@
 
     require_once("../config/Conn.class.php");
 
-    class ModelUser implements \ICrud
+    class ModelUsuario implements \ICrud
     {
         private $name;
-        private $code;
 
         /**
          * Creates a new user

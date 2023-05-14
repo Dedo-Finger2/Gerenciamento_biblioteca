@@ -4,10 +4,10 @@
 
     require_once("../config/Conn.class.php");
 
-    class ModelPublisher implements \ICrud
+    class ModelEditora implements \ICrud
     {
         private $name;
-        private $code;
+        private $books = array();
 
         /**
          * Creates a new publisher

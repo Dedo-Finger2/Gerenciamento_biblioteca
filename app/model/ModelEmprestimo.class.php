@@ -4,10 +4,14 @@
 
     require_once("../config/Conn.class.php");
 
-    class ModelLoan implements \ICrud
+    class ModelEmprestimo implements \ICrud
     {
-        private $name;
-        private $code;
+        private $userID;
+        private $bookID;
+        private $startDate;
+        private $expectedReturnDate;
+        private $returnDate;
+        
 
         /**
          * Creates a new loan
@@ -30,18 +34,22 @@
         /**
          * Edit an loan's data
          * @param array $data - New data of the loan
-         * @param int $id - ID of the loan being edited
+         * @param int $userID - ID of the user that made the loan
+         * @param int $bookID - ID of the book user made loan with
+         * @param mixed $startDate - Date user made the loan
          */
-        public function edit(array $data, int $id)
+        public function edit(array $data, int $userID, int $bookID, $startDate)
         {
 
         }
 
         /**
          * Deletes an loan from the database
-         * @param int $id - ID of the loan to be deleted
+         * @param int $userID - ID of the user that made the loan
+         * @param int $bookID - ID of the book the user borrowed
+         * @param mixed $startDate - Date the user made the loan
          */
-        public function delete(int $id)
+        public function delete(int $userID, int $bookID, $startDate)
         {
 
         }

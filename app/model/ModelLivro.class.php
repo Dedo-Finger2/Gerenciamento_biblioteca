@@ -4,12 +4,12 @@
 
     require_once("../config/Conn.class.php");
 
-    class ModelBook implements \ICrud
+    class ModelLivro implements \ICrud
     {
         private $tittle;
         private $publicDate;
         private $isbnCode;
-        private $editora;
+        private $publisherID;
 
         /**
          * Creates a new book
