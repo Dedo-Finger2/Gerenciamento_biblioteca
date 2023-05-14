@@ -4,7 +4,7 @@
 
     require_once("../config/Conn.class.php");
 
-    class ModelAutor implements \ICrud
+    class ModelAutor
     {
         private $name;
         private $books = array();

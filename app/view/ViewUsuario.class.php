@@ -15,10 +15,10 @@
         {
             $form = 
             '
-            <form action="" method="post">
+            <form action="../app/controller/handler.php" method="post">
                 <label for="userName">Nome: </label>
                 <input type="text" id="userName" name="userName">
-                <button type="submit">Criar usuário</button>
+                <button type="submit" name="create" value="user">Criar usuário</button>
             </form>
             ';
             printf("%s", $form);
