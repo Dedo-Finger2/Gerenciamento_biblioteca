@@ -20,7 +20,7 @@
          * @param array $data - Data from a form (PSOT)
          * @param int $id - ID of the User being edited
          */
-        public function editUser(array $data, int $id)
+        public function editUser(array $data, int $userID)
         {
 
         }
@@ -29,7 +29,7 @@
          * Deletes a User
          * @param int $id - ID of the User being deleted
          */
-        public function deleteUser(int $id)
+        public function deleteUser(int $userID)
         {
 
         }

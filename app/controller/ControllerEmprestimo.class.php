@@ -8,7 +8,7 @@
     {
         /**
          * Creates a new Loan
-         * @param array $data - Data from a form (POST)
+         * @param array $data - Data from a form (POST) [userID], [bookID] and [startDate]
          */
         public function createLoan(array $data)
         {
@@ -17,12 +17,11 @@
 
         /**
          * Edits a Loan's data
-         * @param array $data - Data from a form (PSOT)
          * @param int $userID - ID of the user that made the loan
          * @param int $bookID - ID of the book user made loan with
          * @param mixed $startDate - Date user made the loan
          */
-        public function editLoan(array $data, int $userID, int $bookID, $startDate)
+        public function editLoan(int $userID, int $bookID, $startDate)
         {
 
         }
@@ -35,6 +34,9 @@
          */
         public function deleteLoan(int $userID, int $bookID, $startDate)
         {
-
+            /**
+             * To be able to delete a loan you must know the user who did it, the book he took and when he borrowed that book
+             * with all those PK you can delete an loan from the system
+             */
         }
     }

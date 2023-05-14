@@ -26,11 +26,11 @@
         }
 
         /**
-         * Deletes a publilsher
-         * @param int $id - ID from the publisher being deleted
+         * Deletes a publisher
+         * @param int $publisherID - ID of the publisher being deleted
          */
-        public function deletePublisher(int $id)
+        public function deletePublisher(int $publisherID)
         {
-
+            
         }
     }
