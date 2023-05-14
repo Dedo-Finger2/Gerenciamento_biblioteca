@@ -10,6 +10,7 @@
         private $publicDate;
         private $isbnCode;
         private $publisherID;
+        private $authorID;
 
         /**
          * Creates a new book
@@ -44,6 +45,16 @@
          * @param int $id - ID of the book to be deleted
          */
         public function delete(int $id)
+        {
+
+        }
+
+        /**
+         * A method to list all books by their author
+         * @param int $authorID - ID of the author related to the book
+         * @return array - List of all books that are related to the author
+         */
+        public function getBookByAuthor(int $authorID)
         {
 
         }

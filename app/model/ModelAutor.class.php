@@ -7,7 +7,6 @@
     class ModelAutor implements \ICrud
     {
         private $name;
-        private $code;
         private $books = array();
 
         /**
@@ -31,8 +30,9 @@
         /**
          * Edit an author's data
          * @param array $data - New data of the author
+         * @param int $id - ID of the author
          */
-        public function edit(array $data)
+        public function edit(array $data, int $id)
         {
 
         }
