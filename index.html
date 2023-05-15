@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        form {
+            margin: auto;
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        input,
+        select {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <form action="pages/addForm.php" method="post">
+        <h2>Criação de novos dados</h2>
+        <select style="width: 200px;" name="creationID" id="">
+            <option value="" selected style="font-style: italic;">Selecione o que quer criar...</option>
+            <option value="Usuário">Usuário</option>
+            <option value="Autor">Autor</option>
+            <option value="Editora">Editora</option>
+            <option value="Livro">Livro</option>
+            <option value="Emprestimo">Emprestimo</option>
+            <option value="Autoria">Autoria</option>
+        </select>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    
+    <form action="pages/deleteForm.php" method="post">
+        <h2>Deleção de dados</h2>
+        <select style="width: 200px;" name="deletionID" id="">
+            <option value="" selected style="font-style: italic;">Selecione o que quer deletar...</option>
+            <option value="Usuário">Usuário</option>
+            <option value="Autor">Autor</option>
+            <option value="Editora">Editora</option>
+            <option value="Livro">Livro</option>
+            <option value="Emprestimo">Emprestimo</option>
+            <option value="Autoria">Autoria</option>
+        </select>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    
+    <form action="pages/editForm.php" method="post">
+        <h2>Edição de dados</h2>
+        <select style="width: 200px;" name="editionID" id="">
+            <option value="" selected style="font-style: italic;">Selecione o que quer editar...</option>
+            <option value="Usuário">Usuário</option>
+            <option value="Autor">Autor</option>
+            <option value="Editora">Editora</option>
+            <option value="Livro">Livro</option>
+            <option value="Emprestimo">Emprestimo</option>
+            <option value="Autoria">Autoria</option>
+        </select>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    
+    <form action="pages/listView.php" method="post">
+        <h2>Listagem de dados</h2>
+        <select style="width: 200px;" name="listID" id="">
+            <option value="" selected style="font-style: italic;">Selecione o que quer listar...</option>
+            <option value="Usuário">Usuário</option>
+            <option value="Autor">Autor</option>
+            <option value="Editora">Editora</option>
+            <option value="Livro">Livro</option>
+            <option value="Emprestimo">Emprestimo</option>
+            <option value="Autoria">Autoria</option>
+        </select>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>

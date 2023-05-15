@@ -27,7 +27,6 @@
 /**
  * Using all classes
  */
-use App\Controller\ControllerUsuario;
 use App\View\ViewAutor;
 use App\View\ViewAutoria;
 use App\View\ViewEditora;
@@ -40,34 +39,40 @@ use App\View\ViewUsuario;
  */
 require_once("../autoload.php");
 
-    $editionID = $_POST['editionID'];
+/**
+ * Array with the user's request
+ */
+$creationID = $_POST['creationID'];
 
-    switch ($editionID) {
-        case "Usuário":
-            $form = (new ControllerUsuario())->editForm();
-        break;
-        
-        case "Autor":
-            // a
-        break;
-
-        case "Editora":
-            // a
+/**
+ * Checking what the user's request was then executing the right method from the View folder
+ */
+switch ($creationID) {
+    case "Usuário":
+        $form = (new ViewUsuario())->createForm();
         break;
 
-        case "Livro":
-            // a
+    case "Autor":
+        $form = (new ViewAutor())->createForm();
         break;
 
-        case "Autoria":
-            // a
+    case "Editora":
+        $form = (new ViewEditora())->createForm();
         break;
 
-        case "Emprestimo":
-            // a
+    case "Livro":
+        $form = (new ViewLivro())->createForm();
         break;
-        
-        default:
-            echo "[ERROR]: Option selected not valid! <a href='../index.html'>Try again...</a>";
-    }
+
+    case "Autoria":
+        $form = (new ViewAutoria())->createForm();
+        break;
+
+    case "Emprestimo":
+        $form = (new ViewEmprestimo())->createForm();
+        break;
+
+    default:
+        echo "[ERROR]: Option selected not valid! <a href='../index.html'>Try again...</a>";
+}
 ?>

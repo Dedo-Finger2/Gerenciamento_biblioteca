@@ -2,6 +2,8 @@
 
     namespace App\View;
 
+    require_once("IView.interface.php");
+
     class ViewAutor implements \IView
     {
 
@@ -11,7 +13,15 @@
          */
         public function createForm()
         {
-
+            $form = 
+            '
+            <form action="" method="post">
+                <label for="authorName">Nome: </label>
+                <input type="text" id="authorName" name="authorName">
+                <button type="submit">Criar autor</button>
+            </form>
+            ';
+            printf("%s", $form);
         }
 
         /**

@@ -4,7 +4,7 @@
 
     require_once("../config/Conn.class.php");
 
-    class ModelEmprestimo implements \ICrud
+    class ModelEmprestimo
     {
         private $userID;
         private $bookID;

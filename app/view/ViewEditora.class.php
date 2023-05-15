@@ -2,6 +2,8 @@
 
     namespace App\View;
 
+    require_once("IView.interface.php");
+
     class ViewEditora implements \IView
     {
 
@@ -11,7 +13,15 @@
          */
         public function createForm()
         {
-
+            $form = 
+            '
+            <form action="" method="post">
+                <label for="publisherName">Nome: </label>
+                <input type="text" id="publisherName" name="publisherName">
+                <button type="submit">Criar editora</button>
+            </form>
+            ';
+            printf("%s", $form);
         }
 
         /**

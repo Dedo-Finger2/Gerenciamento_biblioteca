@@ -4,7 +4,7 @@
 
     require_once("../config/Conn.class.php");
 
-    class ModelLivro implements \ICrud
+    class ModelLivro
     {
         private $tittle;
         private $publicDate;
