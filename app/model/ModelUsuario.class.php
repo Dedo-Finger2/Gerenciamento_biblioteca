@@ -119,16 +119,24 @@ class ModelUsuario
      */
     public function listAll()
     {
+        // Checks if the connection is a mysqli object
         if (get_class($this->connection) == "mysqli") {
+            
+            // Selecting all users
             $sql = "SELECT * FROM usuario";
+            $stmt = $this->connection->prepare($sql);
+            
             try {
-                $stmt = $this->connection->prepare($sql);
+                // Tries to execute the operation and get the results of the selection
                 $stmt->execute();
                 $result = $stmt->get_result();
+                
+                // Creates an array to store the result data
                 $rows = array();
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 }
+
                 return $rows;
             } catch (\Exception $e) {
                 throw new \Exception("Failed to select users: " . $e->getMessage());

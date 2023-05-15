@@ -23,7 +23,22 @@
          */
         public function createUser(array $data)
         {
+            try {
+                // If all inputs are empty throw new exeption
+                if (empty($data['userName'])) {
+                    
+                    throw new \Exception('Please fill all required inputs!');
+                }
 
+                // If all inputs has something as value
+                if (($data['userName'])) {
+
+                    return $createdUser = (new ModelUsuario())->create($data);
+                }
+            } catch (\Exception $e) {
+
+                return '[ERROR]: Failed to create new user: '. $e->getMessage();
+            }
         }
 
         /**
@@ -33,7 +48,22 @@
          */
         public function editUser(array $data, int $userID)
         {
+            try {
+                // If all inputs are empty throw new exeption
+                if (empty($data['allUsers']) || empty($data['userName'])) {
+                    
+                    throw new \Exception('Please fill all required inputs!');
+                }
 
+                // If all inputs has something as value
+                if (($data['allUsers']) && ($data['userName'])) {
+
+                    return $editedUser = (new ModelUsuario())->edit($data, $userID);
+                }
+            } catch (\Exception $e) {
+
+                return '[ERROR]: Failed to update user data: '. $e->getMessage();
+            }
         }
 
         /**

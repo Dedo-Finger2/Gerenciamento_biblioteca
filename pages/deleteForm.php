@@ -4,7 +4,7 @@
 
     switch ($deletionID) {
         case "Usuário":
-            // a
+            
         break;
         
         case "Autor":
