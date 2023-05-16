@@ -9,12 +9,14 @@
     class ControllerUsuario extends ModelUsuario
     {
 
+        /**
+         * Method that sends the data to the view, so it can be seen on user's screen
+         */
         public function editForm()
         {
             $users = (new ModelUsuario())->listAll();
 
             $view = (new ViewUsuario())->editForm($users);
-
         }
 
         /**
@@ -72,6 +74,21 @@
          */
         public function deleteUser(int $userID)
         {
+            try {
+                // If all inputs are empty throw new exeption
+                if (empty($userID)) {
+                    
+                    throw new \Exception('Please provide a valid ID!');
+                }
 
+                // If all inputs has something as value
+                if (($userID)) {
+
+                    return $deletedUser = (new ModelUsuario())->delete($userID);
+                }
+            } catch (\Exception $e) {
+
+                return '[ERROR]: Failed to delete user data: '. $e->getMessage();
+            }
         }
     }

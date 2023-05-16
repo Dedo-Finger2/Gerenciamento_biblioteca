@@ -144,5 +144,36 @@ class ModelUsuario
         }
     }
 
+    /**
+     * Gives the user from the provided ID
+     * @return array $user - User's data
+     */
+    public function getUserByID(int $id)
+    {
+        // Checks if the connection is a mysqli object
+        if (get_class($this->connection) == "mysqli") {
+            
+            // Selecting all users
+            $sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
+            $stmt = $this->connection->prepare($sql);
+            
+            try {
+                // Tries to execute the operation and get the results of the selection
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+                // Creates an array to store the result data
+                $user = array();
+                while ($row = $result->fetch_assoc()) {
+                    $user[] = $row;
+                }
+
+                return $user;
+            } catch (\Exception $e) {
+                throw new \Exception("Failed to select user: " . $e->getMessage());
+            }
+        }
+    }
+
 
 }

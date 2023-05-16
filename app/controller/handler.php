@@ -25,8 +25,16 @@
         }
     }
 
+    // Actions done with deleting
+    if (isset($_POST['edit'])) {
 
-    // Actions done with deleting [SOON]
+        switch ($_POST['edit']) {
+            case "user":
+                $id = $editedUser = (new ControllerUsuario())->editUser($_POST, $_POST['allUsers']);
+                echo "Data saved sucefully! ID: " . $id;
+            break;
+        }
+    }
 
     // Actions done with list [SOON]
 

@@ -56,9 +56,9 @@ class ViewUsuario implements \IView
      * Create a new form to confirm the deletion of users
      * @return mixed - Prints the HTML code
      */
-    public function deleteForm()
+    public function deleteForm($user)
     {
-
+        
     }
 
     /**
